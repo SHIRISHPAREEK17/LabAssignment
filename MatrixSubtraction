@@ -1,4 +1,4 @@
-//sum of two matrix
+
 #include<stdio.h>
 #define ROW 100
 #define COL 100
