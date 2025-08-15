@@ -1,2 +1,3 @@
 # LabAssignment
-This repository contains C, C++, and Java implementations of fundamental data structure and algorithm concepts.
+Purpose: College lab assignments to strengthen DSA fundamentals.
+Languages Used: C, C++, Java.
