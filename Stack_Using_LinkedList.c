@@ -6,7 +6,7 @@ struct node {
 };
 
 // Function to insert (push) an element into stack
-struct node *insert(struct node *head, int item) {
+struct node *push(struct node *head, int item) {
     struct node *temp;
     
     if (head == NULL) {
@@ -39,7 +39,7 @@ void display(struct node *head) {
     printf("\n");
 }
 
-struct node *delete(struct node *head) {
+struct node *pop(struct node *head) {
     struct node *temp;
     if (head == NULL) {
         printf("Stack is empty..\n");
@@ -70,10 +70,10 @@ int main() {
             case 1:
                 printf("Enter value to push: ");
                 scanf("%d", &item);
-                head = insert(head, item);
+                head = push(head, item);
                 break;
             case 2:
-                head = delete(head);
+                head = pop(head);
                 break;
             case 3:
                 display(head);
