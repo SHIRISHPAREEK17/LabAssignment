@@ -28,12 +28,12 @@ struct node *insert(struct node *head, int item) {
 // Function to display stack elements
 void display(struct node *head) {
     if (head == NULL) {
-        printf("Stack is empty\n");
+        printf("List is empty\n");
         return;
     }
 
     
-    printf("Stack elements: ");
+    printf("Elements: ");
     while (head != NULL) {
         printf("%d ", head->val);
         head = head->add;
@@ -44,11 +44,11 @@ void display(struct node *head) {
 struct node *delete(struct node *head) {
     struct node *temp;
     if (head == NULL) {
-        printf("Stack is empty..\n");
+        printf("List is empty..\n");
         return head;  
     } else {
         temp = head;
-        printf("Popped: %d\n", head->val);
+        printf("Deleted: %d\n", head->val);
         head = head->add;
         free(temp);
     }
@@ -56,7 +56,7 @@ struct node *delete(struct node *head) {
 }
 int count(struct node *head) {
     if (head == NULL) {
-        printf("Stack is empty\n");
+        printf("List is empty\n");
         return 0;
     }
 
@@ -69,7 +69,7 @@ int count(struct node *head) {
 } 
 int sum(struct node *head) {
     if (head == NULL) {
-        printf("Stack is empty\n");
+        printf("List is empty\n");
         return 0;
     }
 
@@ -82,7 +82,7 @@ int sum(struct node *head) {
 } 
 int max(struct node *head) {
     if (head == NULL) {
-        printf("Stack is empty\n");
+        printf("List is empty\n");
         return 0;
     }
 
@@ -97,7 +97,7 @@ int max(struct node *head) {
 } 
 int min(struct node *head) {
     if (head == NULL) {
-        printf("Stack is empty\n");
+        printf("List is empty\n");
         return 0;
     }
 
@@ -130,7 +130,7 @@ int main() {
 
         switch (choice) {
             case 1:
-                printf("Enter value to push: ");
+                printf("Enter value to insert: ");
                 scanf("%d", &item);
                 head = insert(head, item);
                 break;
@@ -154,7 +154,7 @@ int main() {
                 break; 
 			case 8:
                 if (head == NULL) 
-                   printf("Stack is empty, cannot calculate average\n");
+                   printf("List is empty, cannot calculate average\n");
                else {
                 float avg = (float)sum(head) / count(head);
                 printf("Average from List: %.2f\n", avg);
