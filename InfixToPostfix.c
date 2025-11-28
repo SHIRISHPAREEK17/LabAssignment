@@ -34,8 +34,11 @@ char peek() {
 
 int precendence(char operator){
     switch(operator){
+    	case '^':
+    	  return 3;
         case '*': 
 		case '/':
+		case '%':
 		 return 2;
         case '+':
 		 case '-': 
@@ -45,7 +48,7 @@ int precendence(char operator){
 }
 
 int isOperator(char ch){
-    return (ch=='+'||ch=='-'||ch=='*'||ch=='/');
+    return (ch=='+' || ch=='-' || ch=='*' || ch=='/' || ch=='%' || ch=='^');
 }
 
 void infixToPostfix(char infix[], char post[]){
@@ -65,12 +68,14 @@ void infixToPostfix(char infix[], char post[]){
         }
         
         else if(isOperator(infix[i])) {
-            while (!isEmpty() && peek()!='(' && precendence(peek()) >= precendence(infix[i])) {
-                post[j++] = peek();
-                pop();
-            }
-            push(infix[i]);
-        }
+    while (!isEmpty() && peek()!='(' && 
+          ((precendence(peek()) > precendence(infix[i])) || 
+          (precendence(peek()) == precendence(infix[i]) && infix[i] != '^'))) {
+        post[j++] = peek();
+        pop();
+    }
+    push(infix[i]);
+}
         
         else 
             post[j++] = infix[i];
@@ -93,4 +98,5 @@ int main() {
     printf("Postfix: %s\n", postfix);
     return 0;
 }
+ 
 

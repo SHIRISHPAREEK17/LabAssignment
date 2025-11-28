@@ -1,4 +1,4 @@
-//Queue implements using array
+//Queue implements using static array
 #include<stdio.h>
 #define MAX 10
 int queue[MAX];
@@ -10,7 +10,7 @@ int isFull() {
 }
 
 int isEmpty() {
-    return front == -1 || front > rear;
+    return front == -1;
 }
 
 void enqueue(int item){
@@ -30,6 +30,8 @@ void enqueue(int item){
 void dequeue(){
 	 if (isEmpty()) 
         printf("Queue is empty!\n");
+     if(front==rear)
+        front=rear=-1;
      else 
         printf("Dequeued: %d\n", queue[front++]);
     

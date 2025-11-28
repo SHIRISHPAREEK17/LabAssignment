@@ -87,7 +87,7 @@ struct Node* deleteNode(struct Node *tail, int target) {
     return tail;
 }
 
-// Display circular linked list
+//Display circular linked list
 void display(struct Node *tail) {
     if (tail == NULL) {
         printf("List is Empty\n");
