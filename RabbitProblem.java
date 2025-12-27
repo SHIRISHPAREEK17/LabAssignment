@@ -1,3 +1,35 @@
+/*
+Problem: Rabbit Jump Prevention
+
+We are given a line of pots represented by a binary string.
+'1' means the pot has a flower.
+'0' means the pot is empty and a rabbit is placed there.
+
+Each rabbit can face either left or right.
+A rabbit will jump if the pot in the facing direction is open.
+
+A rabbit is STOPPED if:
+
+it faces a boundary, or
+
+it faces a flower.
+
+Goal:
+Check whether it is possible to assign directions to all rabbits
+such that no rabbit jumps.
+
+Key Rule:
+If any rabbit has BOTH left and right adjacent pots open ('0'),
+then that rabbit must jump and the arrangement is INVALID.
+
+Return:
+"YES" → arrangement is valid (no rabbit jumps)
+"NO" → arrangement is invalid (at least one rabbit jumps)
+
+Example:
+"000" → NO (middle rabbit has both sides open)
+"00100" → YES (each rabbit has at least one blocked side)
+*/
 class RabbitProblem{
     public static String canStopRabbits(String s) {
         int n = s.length();
