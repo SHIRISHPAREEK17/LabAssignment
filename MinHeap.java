@@ -64,7 +64,7 @@ class MinHeap{
         } 
     }
     public static void main(String args[]){
-       int a[] = {10, 90, 80, 70, 60, 50, 40};
+       int a[] = {107, 9, 8, 70, 60, 50, 40};
        heapSorting(a);
        for(int i=0;i<a.length;i++){
         System.out.print(a[i]+" ");
